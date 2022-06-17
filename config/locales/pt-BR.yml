@@ -1,6 +1,13 @@
 ---
 pt-BR:
   activerecord:
+    models:
+      court: 
+        one: quadra
+        other: quadras
+        id: código
+        name: nome
+        status: disponibilidade
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -222,6 +229,5 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
 
-    model:
-      court: "quadra em ingles"
-       
+    
+        
