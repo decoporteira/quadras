@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Schedulers</h1>
+
+<div id="schedulers">
+  <% @schedulers.each do |scheduler| %>
+    <%= render scheduler %>
+    <p>
+      <%= link_to "Show this scheduler", scheduler %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New scheduler", new_scheduler_path %>

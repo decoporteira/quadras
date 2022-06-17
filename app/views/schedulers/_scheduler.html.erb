@@ -1,0 +1,27 @@
+<div id="<%= dom_id scheduler %>">
+  <p>
+    <strong>Status:</strong>
+    <%= scheduler.status %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= I18n.l(scheduler.date) %>
+  </p>
+
+  <p>
+    <strong>Hour:</strong>
+    <%= I18n.l(scheduler.hour) %>
+  </p>
+
+  <p>
+    <strong>Client:</strong>
+    <%= scheduler.client_id %>
+  </p>
+
+  <p>
+    <strong>Court:</strong>
+    <%= scheduler.court_id %>
+  </p>
+
+</div>

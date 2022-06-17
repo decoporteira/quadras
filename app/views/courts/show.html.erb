@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @court.name %></h1>
 <p>
-  <strong>Name:</strong>
+  <strong><%= @court.class.human_attribute_name(:name) %>:</strong>
   <%= @court.name %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong><%= @court.class.human_attribute_name(:status) %>:</strong>
   <%= @court.status %>
 </p>
 
-<%= link_to 'Edit', edit_court_path(@court) %> |
-<%= link_to 'Back', courts_path %>
+<%= link_to t('links.edit'), edit_court_path(@court) %> |
+<%= link_to t('links.back'), courts_path %>

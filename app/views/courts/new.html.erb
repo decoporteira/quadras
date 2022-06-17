@@ -1,5 +1,5 @@
-<h1>New Cou<%= t(:court) %>rt</h1>
+<h1><%= t('new.court')%></h1>
 
 <%= render 'form', court: @court %>
 
-<%= link_to 'Back', courts_path %>
+<%= link_to t('links.back'), courts_path %>

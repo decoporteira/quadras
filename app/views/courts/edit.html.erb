@@ -1,6 +1,6 @@
-<h1>Editing Court</h1>
+<h1><%= t('editing.court')%></h1>
 
 <%= render 'form', court: @court %>
 
-<%= link_to 'Show', @court %> |
-<%= link_to 'Back', courts_path %>
+<%= link_to t('links.show'), @court %> |
+<%= link_to t('links.back'), courts_path %>

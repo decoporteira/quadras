@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  date: 2022-06-17
+  hour: 2022-06-17 15:20:16
+  client: one
+  court: one
+
+two:
+  status: 1
+  date: 2022-06-17
+  hour: 2022-06-17 15:20:16
+  client: two
+  court: two

@@ -1,0 +1,15 @@
+<%= link_to "Log out", destroy_admin_session_path, :method => :delete %>
+<h1>Quadras para aluguel</h1>
+<table>
+  <tbody>
+      <tr>
+        <td><%= link_to 'court', courts_path%></td>
+        <td><%= link_to 'client', clients_path%></td>
+        <td><%= link_to 'scheduler', schedulers_path%></td>
+        <td><%= I18n.l(Time.now)  %></td>
+        
+    
+      </tr>
+    
+  </tbody>
+</table>

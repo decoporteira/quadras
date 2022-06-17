@@ -1,13 +1,37 @@
 ---
 pt-BR:
+  links:
+    edit: "Editar"
+    show: "Mostrar"
+    delete: "Apagar"
+    new: "Novo"
+    back: "Voltar"
+    destroy: "Apagar"
+  new:
+    court: "Nova quadra" 
+  editing:
+    court: "Editando Quadra"
+  showing:
+    court: "Mostrando Moeda"
   activerecord:
     models:
       court: 
         one: quadra
         other: quadras
+    attributes:
+      court:
         id: código
         name: nome
         status: disponibilidade
+      client: 
+        one: cliente
+        other: clientes
+    attributes:
+      client:
+        statuses:
+        member: aluno
+        visitor: visitante
+        regular: mensalista
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -224,7 +248,7 @@ pt-BR:
   time:
     am: ''
     formats:
-      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      default: "%H:%M"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
