@@ -7,7 +7,7 @@ class Scheduler < ApplicationRecord
   validate :not_past_date
 
   def not_past_date
-    if self.date < Date.today
+    if date < Date.today
       errors.add(:date, "Não pode fazer reservar para datas passadas")
     end
   end

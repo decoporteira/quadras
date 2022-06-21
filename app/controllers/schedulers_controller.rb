@@ -31,6 +31,10 @@ class SchedulersController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @scheduler.errors, status: :unprocessable_entity }
+        #format.html { redirect_to new_scheduler_path, status: :unprocessable_entity, :flash => { :notice => @scheduler[:date] } }
+        # :flash => { :notice => @message[:error] }
+        # format.html { render :new, status: :unprocessable_entity }
+        # format.html { redirect_to new_scheduler_path, status: :unprocessable_entity, notice: @scheduler.errors.where(:date) }
       end
     end
   end
