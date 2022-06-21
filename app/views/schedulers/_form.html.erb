@@ -28,14 +28,13 @@
 
   <div>
     <%= form.label :client_id, style: "display: block" %>
-    <%= form.text_field :client_id %>
-    <%#= form.collection_select(:client_id, @clients, :id, :name, {}, { class:"form-control" }) %>
-  </div>
-
+    <%= form.collection_select :client_id, Client.all, :id, :name %>
+    <%#= form.text_field :client_id %>
+    <%#= form.collection_select(:client_id, @clients, :id, :name, {}, {class:"form-control"}) %>
   <div>
     <%= form.label :court_id, style: "display: block" %>
-    <%#= form.collection_select(:court_id, @courts, :id, :name, {}, { class:"form-control" }) %>
-    <%= form.text_field :court_id %>
+    <%= form.collection_select :court_id, Court.all, :id, :name %>
+    <%#= form.text_field :court_id %>
   </div>
 
   <div>
