@@ -1,14 +1,52 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Clients</h1>
-
-<div id="clients">
-  <% @clients.each do |client| %>
-    <%= render client %>
-    <p>
-      <%= link_to "Show this client", client %>
-    </p>
-  <% end %>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
 </div>
-
-<%= link_to "New client", new_client_path %>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+      <thead>
+        <tr role="row">
+          <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 57.0057px;">ID</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Clientes</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Telefone</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Tipo</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to '#', class:"btn btn-success btn-circle btn-sm" do %>
+              <i class="fa fa-plus"></i>
+            <% end %></th>
+        </thead>
+        <tfoot>
+          <tr>
+            <th rowspan="1" colspan="1">ID</th>
+            <th rowspan="1" colspan="1">Clientes</th>
+            <th rowspan="1" colspan="1">Telefone</th>
+            <th rowspan="1" colspan="1">Tipo</th>
+            <th rowspan="1" colspan="1"><%= link_to '#', class:"btn btn-success btn-circle btn-sm" do %>
+                <i class="fa fa-plus"></i>
+              <% end %>
+            </th>
+          </tfoot>
+          <tbody>
+            <% @clients.each do |client|%>
+              <tr class="odd">
+                <td class="sorting_1"><%= client.id %></td>
+                <td><%= client.name %></td>
+                <td><%= client.phone %></td>
+                <td><%= client.status %></td>
+                <td style="width: 10%">
+                  <%= link_to edit_client_path(client), class:"btn btn-primary btn-circle btn-sm" do %>
+                    <i class="fa fa-edit"></i>
+                  <% end %>
+                  <%= link_to client_path(client), method: :delete, class:"btn btn-danger btn-circle btn-sm", data: {confirm: t('messages.confirm_with', item: client.name.truncate(15))} do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
