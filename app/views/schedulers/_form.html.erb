@@ -10,34 +10,40 @@
  </ul>
     </div>
   <% end %>
-  <div>
+  <div class="form-group">
     <%= form.label :status, style: "display: block" %>
     <%= form.select :status, options_for_select(Scheduler.statuses.map {|key, value| [key.titleize, Scheduler.statuses.key(value)]}, @scheduler.status) %>
     
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
+    <%= form.date_field :date, class:"form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :hour, style: "display: block" %>
-    <%= form.time_field :hour %>
+    <%= form.time_field :hour, class:"form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :client_id, style: "display: block" %>
     <%= form.collection_select :client_id, Client.all, :id, :name %>
     <%#= form.text_field :client_id %>
     <%#= form.collection_select(:client_id, @clients, :id, :name, {}, {class:"form-control"}) %>
-  <div>
+  <div class="form-group">
     <%= form.label :court_id, style: "display: block" %>
     <%= form.collection_select :court_id, Court.all, :id, :name %>
     <%#= form.text_field :court_id %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">
+        <span class="icon text-white-50">
+          <i class="fas fa-flag"></i>
+        </span>
+        <span class="text">Confirmar</span>
+      </button>
+     
   </div>
 <% end %>

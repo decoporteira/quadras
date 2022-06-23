@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
+  <div class="form-group">
+    <%= form.label :status, class:"form-control" %>
    
     
     <%= form.select :status, options_for_select(Court.statuses.map {|key, value| [key.titleize, Court.statuses.key(value)]}, @court.status) %>
@@ -25,7 +25,13 @@
   </div>
   
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">
+        <span class="icon text-white-50">
+          <i class="fas fa-flag"></i>
+        </span>
+        <span class="text">Confirmar</span>
+      </button>
+     
   </div>
 <% end %>

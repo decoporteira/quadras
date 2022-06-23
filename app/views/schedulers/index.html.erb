@@ -1,14 +1,44 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Schedulers</h1>
-
-<div id="schedulers">
-  <% @schedulers.each do |scheduler| %>
-    <%= render scheduler %>
-    <p>
-      <%= link_to "Show this scheduler", scheduler %>
-    </p>
-  <% end %>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Agendamentos</h1>
 </div>
-
-<%= link_to "New scheduler", new_scheduler_path %>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+      <thead>
+        <tr role="row">
+          <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 57.0057px;">ID</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Status</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Data</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Hora</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Cliente</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Quadra</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
+              <i class="fa fa-plus"></i>
+            <% end %></th>
+        </thead>
+        
+          <tbody>
+            <% @schedulers.each do |scheduler|%>
+              <tr class="odd">
+                <td class="sorting_1"><%= scheduler.id %></td>
+                <td><%= scheduler.status %></td>
+                <td><%= I18n.l(scheduler.date) %></td>
+                <td><%= I18n.l(scheduler.hour) %></td>
+                <td><%=scheduler.client.name %></td>
+                <td><%=scheduler.court.name %></td>
+                <td style="width: 10%">
+                  <%= link_to edit_scheduler_path(scheduler), class:"btn btn-primary btn-circle btn-sm" do %>
+                    <i class="fa fa-edit"></i>
+                  <% end %>
+                  <%= link_to scheduler_path(scheduler), method: :delete, class:"btn btn-danger btn-circle btn-sm", data: {confirm: t('messages.confirm_with', item: scheduler.status.truncate(15))} do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>

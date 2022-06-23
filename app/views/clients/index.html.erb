@@ -13,21 +13,11 @@
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Clientes</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Telefone</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Tipo</th>
-          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to '#', class:"btn btn-success btn-circle btn-sm" do %>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_client_path, class:"btn btn-success btn-circle btn-sm" do %>
               <i class="fa fa-plus"></i>
             <% end %></th>
         </thead>
-        <tfoot>
-          <tr>
-            <th rowspan="1" colspan="1">ID</th>
-            <th rowspan="1" colspan="1">Clientes</th>
-            <th rowspan="1" colspan="1">Telefone</th>
-            <th rowspan="1" colspan="1">Tipo</th>
-            <th rowspan="1" colspan="1"><%= link_to '#', class:"btn btn-success btn-circle btn-sm" do %>
-                <i class="fa fa-plus"></i>
-              <% end %>
-            </th>
-          </tfoot>
+        
           <tbody>
             <% @clients.each do |client|%>
               <tr class="odd">
