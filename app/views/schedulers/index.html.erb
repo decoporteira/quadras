@@ -7,12 +7,11 @@
     <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
       <thead>
         <tr role="row">
-          <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 57.0057px;">ID</th>
-          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Status</th>
+          <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 57.0057px;">Quadra</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Data</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Hora</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Cliente</th>
-          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Quadra</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Status</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
               <i class="fa fa-plus"></i>
             <% end %></th>
@@ -21,12 +20,12 @@
           <tbody>
             <% @schedulers.each do |scheduler|%>
               <tr class="odd">
-                <td class="sorting_1"><%= scheduler.id %></td>
-                <td><%= scheduler.status %></td>
+              <td class="sorting_1"><%=scheduler.court.name %></td>
                 <td><%= I18n.l(scheduler.date) %></td>
-                <td><%= I18n.l(scheduler.hour) %></td>
+                <td><%= scheduler.hour.hour %></td>
                 <td><%=scheduler.client.name %></td>
-                <td><%=scheduler.court.name %></td>
+                <td><%= scheduler.status %></td>
+                
                 <td style="width: 10%">
                   <%= link_to edit_scheduler_path(scheduler), class:"btn btn-primary btn-circle btn-sm" do %>
                     <i class="fa fa-edit"></i>

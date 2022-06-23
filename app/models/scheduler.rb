@@ -1,6 +1,7 @@
 class Scheduler < ApplicationRecord
   belongs_to :client
   belongs_to :court
+  belongs_to :hour
 
   enum status: { available: 0, unavailable: 1 }
 

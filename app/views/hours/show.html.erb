@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @hour %>
+
+<div>
+  <%= link_to "Edit this hour", edit_hour_path(@hour) %> |
+  <%= link_to "Back to hours", hours_path %>
+
+  <%= button_to "Destroy this hour", @hour, method: :delete %>
+</div>

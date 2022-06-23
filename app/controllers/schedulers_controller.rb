@@ -71,7 +71,7 @@ class SchedulersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def scheduler_params
-    params.require(:scheduler).permit(:status, :date, :hour, :client_id, :court_id)
+    params.require(:scheduler).permit(:status, :date, :hour_id, :client_id, :court_id)
   end
 
   def get_clients
