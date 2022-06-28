@@ -11,9 +11,7 @@
 
     <!-- Default Card Example -->
     
-    
     <% @courts.each do |court|%>
-    <% i = 1 %>
     <div class="col">
       <div class="card mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -29,24 +27,23 @@
 
           <table class="table">
             <tbody>
-              
               <% @hours.each do |hour| %>
-              <td><%= hour.hour %></td>
-                <%= i %>
-                <% if Scheduler.where(id: i) != nil %>
-                
-                  <% agendamento = Scheduler.where(id: i) %>
-                  <tr>
-                  <td><%= agendamento.client.name %></td>
+                <tr>
+                <th scope="row"><%= hour.hour %></th>
+                  <% @schedulers.each do |scheduler| %>
+                  
+                      <% if scheduler.court.id == court.id && scheduler.date == Date.today  && hour.hour == scheduler.hour.hour %>
+
+                          <td>Marcado</td> 
+                      <%else%>
+                          <td class="bg-primary text-white ">Vazio</td>
+                        
+                      <%end%>                  
+
+                  <% end %>
                   </tr>
-                <% else %>
-                  <tr>
-                  <td>vazio</td>
-                  </tr>
-                <% end %>
-                
-                <% i = i + 1 %>
               <% end %>
+              
             </tbody>
           </table>
         </div>
@@ -55,6 +52,7 @@
 
 
     </div>
+    
     <% end %>
 
 
