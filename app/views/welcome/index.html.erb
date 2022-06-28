@@ -1,68 +1,80 @@
-<div class="container-fluid">
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel</h1>
-  </div>
-
-  <div class="row">
+</div>
 
 
+<div class="row">
 
-    <!-- Default Card Example -->
-    
-    <% @courts.each do |court|%>
-    <div class="col">
-      <div class="card mb-4">
-        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-          <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(Date.today) %></h6>
-          <div class="dropdown no-arrow">
-            <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
-            <i class="fa fa-plus"></i>
-            <% end %></th>
-            
-          </div>
+                        <!-- Earnings (Monthly) Card Example -->
+                        
+<% @courts.each do |court|%>
+
+<div class="col-xl-3 col-md-6 mb-4">
+
+
+
+
+
+
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(Date.today) %></h6>
+        <div class="dropdown no-arrow">
+           
         </div>
         <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Status</th>
+                            <th>Nome</th>
 
-          <table class="table">
-            <tbody>
-              <% @hours.each do |hour| %>
-                <tr>
-                <th scope="row"><%= hour.hour %></th>
-                  <% @schedulers.each do |scheduler| %>
-                  
-                      <% if scheduler.court.id == court.id && scheduler.date == Date.today  && hour.hour == scheduler.hour.hour %>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Status</th>
+                            <th>Nome</th>
 
-                          <td>Marcado</td> 
-                      <%else%>
-                          <td class="bg-primary text-white ">Vazio</td>
-                        
-                      <%end%>                  
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <% @hours.each do |hour| %>
 
-                  <% end %>
-                  </tr>
-              <% end %>
-              
+                        <tr>
+                            <th scope="row"><%= hour.hour %></th>
+
+                            <% schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: Date.today) %>
+                            <% if schedulers_in_court_and_hour.any? %>
+                            <td>Alugada</td>
+                            <td><%= schedulers_in_court_and_hour.first.client.name %></td>
+                            <%else%>
+                            <td class="bg-primary text-white ">Vazia</td>
+                            <td class="bg-primary text-white ">
+                                <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
+                                <i class="fa fa-plus"></i>
+                                <% end %></td>
+
+                            <%end%>
+                        </tr>
+                        <% end %>
+            </div>
             </tbody>
-          </table>
+            </table>
+            
         </div>
-      </div>
-      
-
-
+        
     </div>
-    
-    <% end %>
-
-
-
-
-
-
-
-
-
-  </div>
+   </div> 
+</div></div>
+<% end%>
 
 </div>
