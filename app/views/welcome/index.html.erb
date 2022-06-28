@@ -1,70 +1,70 @@
 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel</h1>
-                    </div>
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel</h1>
+  </div>
 
-                    <div class="row">
-
-                        
-
-                            <!-- Default Card Example -->
-                            <% i = 1 %>
-                            <% @courts.each do |court|%>
-                             <div class="col">
-                              <div class="card mb-4">
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(Date.today) %></h6>
-                                    <div class="dropdown no-arrow">
-                                       <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
-                                          <i class="fa fa-plus"></i>
-                                        <% end %></th>
-                                        
-                                    </div>
-                                </div>
-                                <div class="card-body">
-
-                                <table class="table">
-                                      <tbody>
-                                        <% @schedulers.each do |scheduler|%>
-                                          <% if scheduler.court.id == i  && scheduler.date == Date.today %>
-                                            <tr>
-                                              <th scope="row"><%= scheduler.hour.hour %></th>
-                                                <td><%= scheduler.client.name %></td>
-                                                <td class="text-end"><%= link_to edit_scheduler_path(scheduler), class:"btn btn-primary btn-circle btn-sm" do %>
-                                                  <i class="fa fa-edit"></i>
-                                                <% end %>
-                                                <%= link_to scheduler_path(scheduler), method: :delete, class:"btn btn-danger btn-circle btn-sm", data: {confirm: t('messages.confirm_with', item: scheduler.status.truncate(15))} do %>
-                                                  <i class="fas fa-trash"></i>
-                                                <% end %></td>
-                                            </tr>
-                                            
-                                          <% end %>
-                                          
-                                        <% end %>
-                                      </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <% i = i + 1 %>
-                                          
-                                          </div>
-                            <% end %> 
-
-                        
+  <div class="row">
 
 
-                        
 
-                        
+    <!-- Default Card Example -->
+    
+    
+    <% @courts.each do |court|%>
+    <% i = 1 %>
+    <div class="col">
+      <div class="card mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(Date.today) %></h6>
+          <div class="dropdown no-arrow">
+            <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
+            <i class="fa fa-plus"></i>
+            <% end %></th>
+            
+          </div>
+        </div>
+        <div class="card-body">
+
+          <table class="table">
+            <tbody>
+              
+              <% @hours.each do |hour| %>
+              <td><%= hour.hour %></td>
+                <%= i %>
+                <% if Scheduler.where(id: i) != nil %>
+                
+                  <% agendamento = Scheduler.where(id: i) %>
+                  <tr>
+                  <td><%= agendamento.client.name %></td>
+                  </tr>
+                <% else %>
+                  <tr>
+                  <td>vazio</td>
+                  </tr>
+                <% end %>
+                
+                <% i = i + 1 %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
 
 
-                    </div>
+    </div>
+    <% end %>
+
+
+
+
+
+
+
+
+
+  </div>
 
 </div>
-
-
-
-
-

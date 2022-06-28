@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   before_action :get_scheduler
   before_action :get_court
+  before_action :get_hour
 
   def index
   end
@@ -13,5 +14,9 @@ class WelcomeController < ApplicationController
 
   def get_court
     @courts = Court.all
+  end
+
+  def get_hour
+    @hours = Hour.all
   end
 end
