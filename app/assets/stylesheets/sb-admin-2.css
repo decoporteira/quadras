@@ -4534,8 +4534,8 @@ input[type="button"].btn-block {
   min-height: 1px;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 0,5;
-  padding-right: 0,5;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .card-title {
