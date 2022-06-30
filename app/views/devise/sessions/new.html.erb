@@ -13,13 +13,14 @@
                         <!-- Nested Row within Card Body -->
                         
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block"><%= image_tag "pq.png" %></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Entrar</h1>
                                     </div>
                                     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                                    
                                     <form class="user">
                                         <div class="form-group">
                                             <div class="field">

@@ -23,7 +23,7 @@
               <tr class="odd">
                 <td class="sorting_1"><%= court.id %></td>
                 <td><%= court.name %></td>
-                <td><%= court.status %></td>
+                <td><%= court.class.human_attribute_name(court.status) %></td>
                 <td style="width: 10%">
                   <%= link_to edit_court_path(court), class:"btn btn-primary btn-circle btn-sm" do %>
                     <i class="fa fa-edit"></i>

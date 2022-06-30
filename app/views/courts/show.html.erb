@@ -12,3 +12,5 @@
 
 <%= link_to t('links.edit'), edit_court_path(@court) %> |
 <%= link_to t('links.back'), courts_path %>
+
+<%= button_to "Apagar quadra", @court, method: :delete, class:"btn-primary" %>

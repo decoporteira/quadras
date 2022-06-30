@@ -1,5 +1,14 @@
+
+
+
 ---
 pt-BR:
+  messages:
+    confirm_with: Deseja realmente apagar esse item?
+  form:
+    username: 'User name'
+    password: 'Password'
+    name: 'Nome'
   links:
     edit: "Editar"
     show: "Mostrar"
@@ -9,29 +18,51 @@ pt-BR:
     destroy: "Apagar"
   new:
     court: "Nova quadra" 
+    client: "Novo cliente"
+    hour: "Novo horário"
+    scheduler: "Novo agendamento"
   editing:
-    court: "Editando Quadra"
+    court: "Editando quadra"
+    client: "Editando cliente"
+    hour: "Editando horário"
+    scheduler: "Editando agendamento"
   showing:
-    court: "Mostrando Moeda"
+    court: "Mostrando quadra"
   activerecord:
     models:
       court: 
         one: quadra
         other: quadras
-    attributes:
-      court:
-        id: código
-        name: nome
-        status: disponibilidade
       client: 
         one: cliente
         other: clientes
+      hour: 
+        one: hora
+        other: horas
+      scheduler: 
+        one: Agendamento
+        other: Agendamentos
     attributes:
+      court:
+        name: Nome
+        status: Disponibilidade
+        created_at: Criado em
+        updated_at: Atualizado em
+        available: Disponível
+        unavailable: Indisponível
+        statuses:
+          available: aluno
+          unavailable: visitante
       client:
+        name: Nome
+        phone: Telefone
+        status: Tipo de cliente
+        created_at: Criado em
+        updated_at: Atualizado em
         statuses:
         member: aluno
         visitor: visitante
-        regular: mensalista
+        regular: mensalista     
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
