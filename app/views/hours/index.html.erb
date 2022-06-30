@@ -11,7 +11,7 @@
         <tr role="row">
           <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 57.0057px;">ID</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Horários</th>
-          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">status</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Diponibilidade</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_hour_path, class:"btn btn-success btn-circle btn-sm" do %>
               <i class="fa fa-plus"></i>
             <% end %></th>
@@ -22,7 +22,7 @@
               <tr class="odd">
                 <td class="sorting_1"><%= hour.id %></td>
                 <td><%= hour.hour %></td>
-                <td><%= hour.status %></td>
+                <td><%= hour.class.human_attribute_name(hour.status) %></td>
                 <td style="width: 10%">
                   <%= link_to edit_hour_path(hour), class:"btn btn-primary btn-circle btn-sm" do %>
                     <i class="fa fa-edit"></i>

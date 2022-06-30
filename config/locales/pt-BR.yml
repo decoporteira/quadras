@@ -74,8 +74,8 @@ pt-BR:
         updated_at: Atualizado em
         statuses:
         scheduler:
-        available: ativo
-        unavailable: cancelado
+        available: Disponível
+        unavailable: Não Disponível
       hour:
         hour: Horário
         phone: Telefone
@@ -85,9 +85,10 @@ pt-BR:
         status: Disponibilidade
         created_at: Criado em
         updated_at: Atualizado em
+        status: Disponibilidade
         statuses:
-        available: ativo
-        unavailable: cancelado
+        available: Disponível
+        unavailable: Não Disponível
             
     errors:
       messages:

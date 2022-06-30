@@ -11,7 +11,7 @@
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Data</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Hora</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Cliente</th>
-          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Status</th>
+     
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
               <i class="fa fa-plus"></i>
             <% end %></th>
@@ -24,7 +24,7 @@
                 <td><%= I18n.l(scheduler.date) %></td>
                 <td><%= scheduler.hour.hour %></td>
                 <td><%=scheduler.client.name %></td>
-                <td><%= scheduler.class.human_attribute_name(scheduler.status) %></td>
+                
                 
                 <td style="width: 10%">
                   <%= link_to edit_scheduler_path(scheduler), class:"btn btn-primary btn-circle btn-sm" do %>

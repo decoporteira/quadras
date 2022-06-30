@@ -54,10 +54,10 @@
 
                             <% schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: Date.today) %>
                             <% if schedulers_in_court_and_hour.any? %>
-                            <td>Alugada</td>
+                            <td>Reservada</td>
                             <td><%= schedulers_in_court_and_hour.first.client.name %></td>
                             <%else%>
-                            <td class="bg-primary text-white ">Vazia</td>
+                            <td class="bg-primary text-white ">Disponível</td>
                             <td class="bg-primary text-white ">
                                 <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
                                 <i class="fa fa-plus"></i>
