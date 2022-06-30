@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Custom fonts for this template-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -53,7 +54,7 @@
                                      
                                     
                 <%= link_to welcome_index_path, class:"nav-link" do %>
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-home"></i>
                     <span>Inicial</span></a>
                     <% end %>
             </li>
@@ -61,16 +62,24 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Agendamento
-            </div>
+            <!-- Heading -->   
 
 
             <!-- Nav Item - Charts -->
+
             <li class="nav-item">
+                 <%= link_to schedulers_path, class:"nav-link" do %>
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Agendar</span>
+                    <%end%>
+            </li>
+
+            <hr class="sidebar-divider">
+            
+            <li class="nav-item">
+
             <%= link_to courts_path, class:"nav-link" do %>
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa-solid fa-table-cells-large"></i>
                     <span>Quadras</span>
                     <% end %>
             </li>
@@ -78,21 +87,16 @@
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                <%= link_to clients_path, class:"nav-link" do %>
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-users"></i>
                     <span>Clientes</span>
                     <% end %>
             </li>
 
-            <li class="nav-item">
-                 <%= link_to schedulers_path, class:"nav-link" do %>
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Agendar</span>
-                    <%end%>
-            </li>
+            
             <li class="nav-item">
                  <%= link_to hours_path, class:"nav-link" do %>
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Horas</span>
+                   <i class="far fa-clock"></i>
+                    <span>Horários</span>
                     <%end%>
             </li>
             

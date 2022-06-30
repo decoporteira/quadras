@@ -24,7 +24,7 @@
                 <td><%= I18n.l(scheduler.date) %></td>
                 <td><%= scheduler.hour.hour %></td>
                 <td><%=scheduler.client.name %></td>
-                <td><%= scheduler.status %></td>
+                <td><%= scheduler.class.human_attribute_name(scheduler.status) %></td>
                 
                 <td style="width: 10%">
                   <%= link_to edit_scheduler_path(scheduler), class:"btn btn-primary btn-circle btn-sm" do %>

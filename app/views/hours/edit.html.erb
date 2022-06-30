@@ -1,10 +1,10 @@
-<h1>Editing hour</h1>
+<h1><%= t('editing.hour')%></h1>
 
 <%= render "form", hour: @hour %>
 
 <br>
 
 <div>
-  <%= link_to "Show this hour", @hour %> |
-  <%= link_to "Back to hours", hours_path %>
+ <%= link_to t('links.show'), @hour %> |
+<%= link_to t('links.back'), hours_path %>
 </div>

@@ -1,11 +1,11 @@
 <p style="color: green"><%= notice %></p>
 <%= flash[:errors]%>
-<h1>New scheduler</h1>
+<h1><%= t('new.scheduler')%></h1>
 
 <%= render "form", scheduler: @scheduler %>
 
 <br>
 
 <div>
-  <%= link_to "Back to schedulers", schedulers_path %>
+  <%= link_to t('links.back'), schedulers_path %>
 </div>

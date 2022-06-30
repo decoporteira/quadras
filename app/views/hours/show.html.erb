@@ -3,8 +3,9 @@
 <%= render @hour %>
 
 <div>
-  <%= link_to "Edit this hour", edit_hour_path(@hour) %> |
-  <%= link_to "Back to hours", hours_path %>
+  <%= link_to t('links.show'), edit_hour_path(@hour) %> |
+  <%= link_to t('links.back'), hours_path %>
 
-  <%= button_to "Destroy this hour", @hour, method: :delete %>
+
+  <%= button_to "Apagar horário", @hour, method: :delete, class:"btn-danger" %>
 </div>

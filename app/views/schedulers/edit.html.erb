@@ -1,11 +1,12 @@
 <p style="color: green"><%= notice %></p>
-<h1>Editing scheduler</h1>
+<h1><%= t('editing.scheduler')%></h1>
 
 <%= render "form", scheduler: @scheduler %>
 
 <br>
 
 <div>
-  <%= link_to "Show this scheduler", @scheduler %> |
-  <%= link_to "Back to schedulers", schedulers_path %>
+<%= link_to t('links.show'), @scheduler %> |
+  <%= link_to t('links.back'), schedulers_path %>
+  
 </div>

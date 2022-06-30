@@ -3,8 +3,9 @@
 <%= render @scheduler %>
 
 <div>
-  <%= link_to "Edit this scheduler", edit_scheduler_path(@scheduler) %> |
-  <%= link_to "Back to schedulers", schedulers_path %>
+  
+  <%= link_to t('links.edit'), @scheduler %> |
+  <%= link_to t('links.back'), schedulers_path %>
 
-  <%= button_to "Destroy this scheduler", @scheduler, method: :delete %>
+  <%= button_to "Apagar Agendamento", @scheduler, method: :delete %>
 </div>

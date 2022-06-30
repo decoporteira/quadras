@@ -37,8 +37,8 @@ pt-BR:
         one: cliente
         other: clientes
       hour: 
-        one: hora
-        other: horas
+        one: horário
+        other: horários
       scheduler: 
         one: Agendamento
         other: Agendamentos
@@ -62,7 +62,33 @@ pt-BR:
         statuses:
         member: aluno
         visitor: visitante
-        regular: mensalista     
+        regular: mensalista 
+      scheduler:
+        court_id: Quadra
+        phone: Telefone
+        date: Data
+        hour_id: Hora
+        client_id: Cliente
+        status: Disponibilidade
+        created_at: Criado em
+        updated_at: Atualizado em
+        statuses:
+        scheduler:
+        available: ativo
+        unavailable: cancelado
+      hour:
+        hour: Horário
+        phone: Telefone
+        date: Data
+        hour_id: Hora
+        client_id: Cliente
+        status: Disponibilidade
+        created_at: Criado em
+        updated_at: Atualizado em
+        statuses:
+        available: ativo
+        unavailable: cancelado
+            
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
