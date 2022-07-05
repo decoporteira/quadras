@@ -3,6 +3,30 @@
 
 ---
 pt-BR:
+  client:  
+    errors:
+      messages:
+        not_saved:
+          one: "Não foi possível cadastrar o cliente, 1 erro foi encontrado"
+          other: "Não foi possível cadastrar o cliente, alguns erros foram encontrados"
+  court:  
+    errors:
+      messages:
+        not_saved:
+          one: "Não foi possível cadastrar a quadra, 1 erro foi encontrado"
+          other: "Não foi possível cadastrar a quadra, alguns erros foram encontrados"
+  hour:  
+    errors:
+      messages:
+        not_saved:
+          one: "Não foi possível cadastrar o horário, 1 erro foi encontrado"
+          other: "Não foi possível cadastrar o horário, alguns erros foram encontrados"
+  scheduler:  
+    errors:
+      messages:
+        not_saved:
+          one: "Não foi possível cadastrar o agendamento, 1 erro foi encontrado"
+          other: "Não foi possível cadastrar o agendamento, alguns erros foram encontrados"
   messages:
     confirm_with: Deseja realmente apagar esse item?
   form:
@@ -63,6 +87,8 @@ pt-BR:
         member: aluno
         visitor: visitante
         regular: mensalista 
+        
+
       scheduler:
         court_id: Quadra
         phone: Telefone

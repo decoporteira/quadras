@@ -10,7 +10,7 @@ class Scheduler < ApplicationRecord
 
   def not_past_date
     if date < Date.today
-      errors.add(:date, "Não pode fazer reservar para datas passadas")
+      errors.add(:date, " - Não pode fazer reserva para datas passadas")
     end
   end
 end
