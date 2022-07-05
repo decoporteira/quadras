@@ -1,14 +1,26 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel</h1>
+    <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel - dia <%= @date %></h1>
 </div>
+
+
+
+
+<form action="/" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="date" name="date" />
+  <input type="submit" />
+</form><br/>
+
+
+
 
 
 <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
-                        
+                      
 <% @courts.each do |court|%>
 
 <div class="col-xl-3 col-md-6 mb-4">
@@ -23,7 +35,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(Date.today) %></h6>
+        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= @date %></h6>
         <div class="dropdown no-arrow">
            
         </div>
@@ -52,7 +64,7 @@
                         <tr>
                             <th scope="row"><%= hour.hour %></th>
 
-                            <% schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: Date.today) %>
+                            <% schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: @date) %>
                             <% if schedulers_in_court_and_hour.any? %>
                             <td>Reservada</td>
                             <td><%= schedulers_in_court_and_hour.first.client.name %></td>

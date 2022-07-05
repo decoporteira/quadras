@@ -4,6 +4,8 @@ class WelcomeController < ApplicationController
   before_action :get_hour
 
   def index
+    date = params[:date]
+    @date = date ? date : Date.today
   end
 
   private
