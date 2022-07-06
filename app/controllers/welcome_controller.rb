@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   def index
     date = params[:date]
     @date = date ? date : Date.today
+    @date.to_date
   end
 
   private
