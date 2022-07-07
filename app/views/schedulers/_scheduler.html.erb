@@ -1,30 +1,25 @@
 <div id="<%= dom_id scheduler %>">
-  <p>
-    <strong>Status:</strong>
-    <%= scheduler.status %>
+   <p>
+    <strong>Quadra:</strong>
+    <%= scheduler.court.name  %>
   </p>
 
   <p>
-    <strong>Date:</strong>
+    <strong>Data:</strong>
     <%= I18n.l(scheduler.date) %>
   </p>
 
   <p>
-    <strong>Start Time:</strong>
-    <%= scheduler.start_time %>
+    <strong>Início:</strong>
+    <%= scheduler.start_time.strftime("%H:%M") unless scheduler.start_time.nil? %>
   </p>
 <p>
-    <strong>End Time:</strong>
-    <%= scheduler.end_time %>
+    <strong>Final:</strong>
+    <%= scheduler.end_time.strftime("%H:%M") unless scheduler.end_time.nil? %>
   </p>
   <p>
-    <strong>Client:</strong>
-    <%= scheduler.client_id %>
-  </p>
-
-  <p>
-    <strong>Court:</strong>
-    <%= scheduler.court_id %>
+    <strong>Cliente:</strong>
+    <%= scheduler.client.name  %>
   </p>
 
 </div>
