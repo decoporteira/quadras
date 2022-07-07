@@ -48,9 +48,12 @@
                             
                             <% schedulers_in_court = @schedulers.where(court_id: court.id, date: @date) %>
                             <% if schedulers_in_court.any? %>
-                                <td scope="row"><%= schedulers_in_court.first.start_time.strftime("%H:%M") unless schedulers_in_court.first.start_time.nil? %></td>
-                                <td scope="row"><%= schedulers_in_court.first.end_time.strftime("%H:%M") unless schedulers_in_court.first.end_time.nil? %></td>
-                                <td ><%= schedulers_in_court.first.client.name %><%#= schedulers_in_court.first.date %></td>
+                                <% schedulers_in_court.each do |element|%>
+                                <td scope="row"><%= element.start_time.strftime("%H:%M") unless element.start_time.nil? %></td>
+                                <td scope="row"><%= element.end_time.strftime("%H:%M") unless element.end_time.nil? %></td>
+                                <td ><%= element.client.name %><%#= schedulers_in_court.first.date %></td>
+                                </tr>
+                                <%end%>
                             <%else%>
                                 <td> - </td>
                                 <td> - </td>
