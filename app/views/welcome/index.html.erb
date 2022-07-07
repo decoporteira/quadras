@@ -4,33 +4,17 @@
     <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel - dia <%= I18n.l(@date.to_date) %></h1>
 </div>
 
-
-
-
 <form action="/" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <input type="date" name="date" />
   <input type="submit" />
 </form><br/>
 
-
-
-
-
 <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                      
+                     
 <% @courts.each do |court|%>
 
 <div class="col-xl-3 col-md-6 mb-4">
-
-
-
-
-
-
-
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -52,41 +36,32 @@
                     </thead>
                     <tfoot>
                         <tr>
-                             <th>Início</th>
+                            <th>Início</th>
                             <th>Final</th>
                             <th>Nome</th>
 
                         </tr>
                     </tfoot>
                     <tbody>
-                        <%# @hours.each do |hour| %>
 
                         <tr>
-                            <td scope="row">14:00</td>
-                            <td scope="row">15:00</td>
+                            
                             <% schedulers_in_court = @schedulers.where(court_id: court.id, date: @date) %>
                             <% if schedulers_in_court.any? %>
-                            
-                                <td ><%= schedulers_in_court.first.client.name %></td>
+                                <td scope="row"><%= schedulers_in_court.first.start_time.strftime("%H:%M") unless schedulers_in_court.first.start_time.nil? %></td>
+                                <td scope="row"><%= schedulers_in_court.first.end_time.strftime("%H:%M") unless schedulers_in_court.first.end_time.nil? %></td>
+                                <td ><%= schedulers_in_court.first.client.name %><%#= schedulers_in_court.first.date %></td>
                             <%else%>
+                                <td> - </td>
+                                <td> - </td>
+                                
                                 <td class="bg-primary text-white ">
                                     <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
-                                    <i class="fa fa-plus"></i>
-                                    <% end %></td>
+                                    <i class="fa fa-plus"></i></td>
+                                    <% end %>
                             <% end %>
-                            
 
-                            <%# schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: @date) %>
-                            <%# if schedulers_in_court_and_hour.any? %>
-                            
-                            <%#= schedulers_in_court_and_hour.first.client.name %>
-                            <%#else%>
-                            
-                            
-
-                            <%#end%>
                         </tr>
-                        <%# end %>
             </div>
             </tbody>
             </table>
