@@ -31,10 +31,6 @@ class SchedulersController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @scheduler.errors, status: :unprocessable_entity }
-        #format.html { redirect_to new_scheduler_path, status: :unprocessable_entity, :flash => { :notice => @scheduler[:date] } }
-        # :flash => { :notice => @message[:error] }
-        # format.html { render :new, status: :unprocessable_entity }
-        # format.html { redirect_to new_scheduler_path, status: :unprocessable_entity, notice: @scheduler.errors.where(:date) }
       end
     end
   end
@@ -71,7 +67,7 @@ class SchedulersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def scheduler_params
-    params.require(:scheduler).permit(:status, :date, :hour_id, :client_id, :court_id)
+    params.require(:scheduler).permit(:status, :date, :start_time, :end_time, :client_id, :court_id)
   end
 
   def get_clients

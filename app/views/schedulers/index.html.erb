@@ -9,7 +9,8 @@
         <tr role="row">
           <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 57.0057px;">Quadra</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Data</th>
-          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Hora</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Início</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Final</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Cliente</th>
      
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
@@ -22,8 +23,12 @@
               <tr class="odd">
               <td class="sorting_1"><%=scheduler.court.name %></td>
                 <td><%= I18n.l(scheduler.date) %></td>
-                <td><%= scheduler.hour.hour %></td>
-                <td><%=scheduler.client.name %></td>
+               
+
+                <td><%= scheduler.start_time.strftime("%H:%M") unless scheduler.start_time.nil? %></td>
+                
+                <td><%= scheduler.end_time.strftime("%H:%M") unless scheduler.end_time.nil? %></td>
+                <td><%= scheduler.client.name %></td>
                 
                 
                 <td style="width: 10%">

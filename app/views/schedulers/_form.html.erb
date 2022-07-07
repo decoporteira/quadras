@@ -28,9 +28,22 @@
   </div>
 
   <div class="form-group">
-   <%= form.label :hour_id, style: "display: block" %>
-     <%= form.collection_select :hour_id, Hour.all, :id, :hour %>
+   <%= form.label :time, style: "display: block" %>
+     <%#= form.collection_select :hour_id, Hour.all, :id, :hour %>
+     <%= form.time_field :start_time, 
+      value: "%H:%M", 
+      min: '07:00',
+      max: '22:00', class:"form-control"%>
   </div>
+  <div class="form-group">
+   <%= form.label :end_time, style: "display: block" %>
+     <%#= form.collection_select :hour_id, Hour.all, :id, :hour %>
+     <%= form.time_field :end_time,
+      value: "%H:%M", 
+      min: '07:00',
+      max: '22:00', class:"form-control"%>
+  </div>
+  
 
   <div class="form-group">
     <%= form.label :client_id, style: "display: block" %>

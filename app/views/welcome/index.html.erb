@@ -1,7 +1,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel - dia <%= I18n.l(@date) %></h1>
+    <h1 class="h3 mb-0 text-gray-800">Quadras para Aluguel - dia <%= I18n.l(@date.to_date) %></h1>
 </div>
 
 
@@ -35,7 +35,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(@date) %></h6>
+        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(@date.to_date) %></h6>
         <div class="dropdown no-arrow">
            
         </div>
@@ -59,25 +59,25 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <% @hours.each do |hour| %>
+                        <%# @hours.each do |hour| %>
 
                         <tr>
-                            <th scope="row"><%= hour.hour %></th>
+                            <th scope="row"><%#= hour.hour %></th>
 
-                            <% schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: @date) %>
-                            <% if schedulers_in_court_and_hour.any? %>
+                            <%# schedulers_in_court_and_hour = @schedulers.where(court_id: court.id, hour_id: hour.id, date: @date) %>
+                            <%# if schedulers_in_court_and_hour.any? %>
                             <td>Reservada</td>
-                            <td><%= schedulers_in_court_and_hour.first.client.name %></td>
-                            <%else%>
+                            <td><%#= schedulers_in_court_and_hour.first.client.name %></td>
+                            <%#else%>
                             <td class="bg-primary text-white ">Disponível</td>
                             <td class="bg-primary text-white ">
-                                <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
+                                <%#= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
                                 <i class="fa fa-plus"></i>
-                                <% end %></td>
+                                <%# end %></td>
 
-                            <%end%>
+                            <%#end%>
                         </tr>
-                        <% end %>
+                        <%# end %>
             </div>
             </tbody>
             </table>

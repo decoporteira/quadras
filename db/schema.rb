@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_23_150445) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_07_170641) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_23_150445) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "start_time"
+    t.time "end_time"
   end
 
   create_table "schedulers", force: :cascade do |t|
@@ -55,13 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_23_150445) do
     t.bigint "court_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "hour_id", null: false
+    t.time "start_time"
+    t.time "end_time"
     t.index ["client_id"], name: "index_schedulers_on_client_id"
     t.index ["court_id"], name: "index_schedulers_on_court_id"
-    t.index ["hour_id"], name: "index_schedulers_on_hour_id"
   end
 
   add_foreign_key "schedulers", "clients"
   add_foreign_key "schedulers", "courts"
-  add_foreign_key "schedulers", "hours"
 end

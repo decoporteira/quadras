@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :hours
   resources :schedulers
   resources :clients
   devise_for :admins
