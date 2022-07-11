@@ -5,7 +5,7 @@ class Scheduler < ApplicationRecord
   enum status: { available: 0, unavailable: 1 }
 
   validate :not_past_date
-  #validates_uniqueness_of :court, scope: [:date, :start_hour]
+  #validates_uniqueness_of :court, scope: [:date]
 
   def not_past_date
     if date < Date.today

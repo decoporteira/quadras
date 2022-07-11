@@ -1,0 +1,17 @@
+                     List of relations
+ Schema |         Name         |   Type   |     Owner      
+--------+----------------------+----------+----------------
+ public | admins               | table    | lxgejbprzntbqd
+ public | admins_id_seq        | sequence | lxgejbprzntbqd
+ public | ar_internal_metadata | table    | lxgejbprzntbqd
+ public | clients              | table    | lxgejbprzntbqd
+ public | clients_id_seq       | sequence | lxgejbprzntbqd
+ public | courts               | table    | lxgejbprzntbqd
+ public | courts_id_seq        | sequence | lxgejbprzntbqd
+ public | hours                | table    | lxgejbprzntbqd
+ public | hours_id_seq         | sequence | lxgejbprzntbqd
+ public | schedulers           | table    | lxgejbprzntbqd
+ public | schedulers_id_seq    | sequence | lxgejbprzntbqd
+ public | schema_migrations    | table    | lxgejbprzntbqd
+(12 rows)
+
