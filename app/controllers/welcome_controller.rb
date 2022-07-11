@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
 
   def index
     date = params[:date]
+    court_id = params[:court_id]
     @date = date ? date : Date.today
   end
 

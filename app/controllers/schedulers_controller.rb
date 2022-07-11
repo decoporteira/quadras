@@ -13,6 +13,8 @@ class SchedulersController < ApplicationController
 
   # GET /schedulers/new
   def new
+    court_id = params[:court_id]
+    @court_id = court_id ? court_id : 5
     @scheduler = Scheduler.new
   end
 

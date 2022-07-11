@@ -13,8 +13,13 @@
 
   <div class="form-group">
     <%= form.label :court_id, style: "display: block" %>
-    <%= form.collection_select :court_id, Court.all, :id, :name %>
-    <%#= form.text_field :court_id %>
+    <% name_court = Court.find(@court_id) %>
+    <%#= name_court.name%>
+    <%= form.collection_select :court_id, Court.all, :id, :name, {:prompt => "Selecione...", :selected => params[:court_id]}, {}%>
+    <%#= form.text_field :court_id, value:"#{@court_id }", type:"hidden" %>
+
+    <%#= form.collection_select :court_id, Court.all, :id, :name %>
+    
   </div>
   <div class="form-group">
     <%= form.label :status, style: "display: block" %>

@@ -19,7 +19,10 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(@date.to_date) %></h6>
+        <h6 class="m-0 font-weight-bold text-primary"><%= court.name %> - <%= I18n.l(@date.to_date) %> <%= link_to new_scheduler_path(:court_id => court.id) , class:"btn btn-success btn-circle btn-sm"  do %>
+                                   <i class="fa fa-plus"></i>
+                                   <%end%></h6>
+       
         <div class="dropdown no-arrow">
            
         </div>
@@ -57,11 +60,12 @@
                             <%else%>
                                 <td> - </td>
                                 <td> - </td>
+                                <td> - </td>
                                 
-                                <td class="bg-primary text-white ">
-                                    <%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
-                                    <i class="fa fa-plus"></i></td>
-                                    <% end %>
+                            
+                                 
+                                  
+                                  
                             <% end %>
 
                         </tr>
