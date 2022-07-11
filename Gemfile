@@ -17,6 +17,7 @@ gem "uglifier", ">= 1.3.0"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem "byebug-dap"
+gem "rubocop-rails", "~> 2.15", ">= 2.15.2"
 gem "rspec"
 gem "devise"
 gem "rails-i18n", "~> 7.0.0"
