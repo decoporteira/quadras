@@ -3,6 +3,9 @@
 
 ---
 pt-BR:
+  status_list:
+    available: Disponível
+    unavailable: Não Disponível
   client:  
     errors:
       messages:
@@ -15,12 +18,7 @@ pt-BR:
         not_saved:
           one: "Não foi possível cadastrar a quadra, 1 erro foi encontrado"
           other: "Não foi possível cadastrar a quadra, alguns erros foram encontrados"
-  hour:  
-    errors:
-      messages:
-        not_saved:
-          one: "Não foi possível cadastrar o horário, 1 erro foi encontrado"
-          other: "Não foi possível cadastrar o horário, alguns erros foram encontrados"
+  
   scheduler:  
     errors:
       messages:
@@ -60,9 +58,7 @@ pt-BR:
       client: 
         one: cliente
         other: clientes
-      hour: 
-        one: horário
-        other: horários
+
       scheduler: 
         one: Agendamento
         other: Agendamentos
@@ -74,9 +70,9 @@ pt-BR:
         updated_at: Atualizado em
         available: Disponível
         unavailable: Indisponível
-        statuses:
-          available: aluno
-          unavailable: visitante
+        status_list:
+          available: Disponível
+          unavailable: Não Disponível
       client:
         name: Nome
         phone: Telefone
@@ -98,23 +94,10 @@ pt-BR:
         status: Disponibilidade
         created_at: Criado em
         updated_at: Atualizado em
-        statuses:
-        scheduler:
-        available: Disponível
-        unavailable: Não Disponível
-      hour:
-        hour: Horário
-        phone: Telefone
-        date: Data
-        hour_id: Hora
-        client_id: Cliente
-        status: Disponibilidade
-        created_at: Criado em
-        updated_at: Atualizado em
-        status: Disponibilidade
-        statuses:
-        available: Disponível
-        unavailable: Não Disponível
+        status_list:
+          available: Disponível
+          unavailable: Não Disponível
+        
             
     errors:
       messages:

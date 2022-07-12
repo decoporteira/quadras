@@ -21,6 +21,7 @@ gem "rubocop-rails", "~> 2.15", ">= 2.15.2"
 gem "rspec"
 gem "devise"
 gem "rails-i18n", "~> 7.0.0"
+gem "translate_enum", require: "translate_enum/active_record"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

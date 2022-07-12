@@ -18,8 +18,8 @@
 
   <div class="form-group">
    
-     <%= form.label :status %>
-    <%= form.select :status, options_for_select(Court.statuses.map {|key, value| [key.titleize, Court.statuses.key(value)]}, @court.status) %>
+    <%= form.label :status %>
+    <%= form.select :status, options_for_select(Court.translated_statuses {|translation, key, value| [key.titleize, Court.statuses.key(value)]}, @court.status) %>
 
   </div>
   
