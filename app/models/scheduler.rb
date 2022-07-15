@@ -8,6 +8,7 @@ class Scheduler < ApplicationRecord
 
   validate :not_past_date
   #validates_uniqueness_of :court, scope: [:date]
+  #validate :not_same_hour
 
   def not_past_date
     if date < Date.today
