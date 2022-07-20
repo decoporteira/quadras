@@ -63,7 +63,8 @@
                                 <% schedulers_in_court.each do |element|%>
                                 <td scope="row"><%= element.start_time.strftime("%H:%M") unless element.start_time.nil? %></td>
                                 <td scope="row"><%= element.end_time.strftime("%H:%M") unless element.end_time.nil? %></td>
-                                <td ><%= element.client.name %><%#= schedulers_in_court.first.date %></td>
+                                <td><%= element.client.name %><%#= schedulers_in_court.first.date %></td>
+                                <td><%= element.start_time.strftime("%H:%M")...element.end_time.strftime("%H:%M")%></td>
                                 </tr>
                                 <%end%>
                             <%else%>
