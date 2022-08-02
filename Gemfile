@@ -18,7 +18,6 @@ gem "uglifier", ">= 1.3.0"
 # gem 'mini_racer', platforms: :ruby
 gem "byebug-dap"
 gem "rubocop-rails", "~> 2.15", ">= 2.15.2"
-gem "rspec"
 gem "devise"
 gem "rails-i18n", "~> 7.0.0"
 gem "translate_enum", require: "translate_enum/active_record"
@@ -45,6 +44,11 @@ gem "bootsnap", ">= 1.1.0", require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+end
+group :development, :test do
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: "main"
+  end
 end
 
 group :development do
