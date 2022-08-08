@@ -1,5 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Scheduler, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "Teste de datas que ainda não passaram" do
+    scheduler = FactoryBot.create(:scheduler)
+
+    expect(scheduler.not_past_date).to eq(nil)
+  end
 end
