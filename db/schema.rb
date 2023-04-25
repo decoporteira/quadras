@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_11_202040) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_25_184256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_202040) do
     t.time "end_time"
     t.index ["client_id"], name: "index_schedulers_on_client_id"
     t.index ["court_id"], name: "index_schedulers_on_court_id"
+  end
+
+  create_table "values", force: :cascade do |t|
+    t.decimal "beach_day_value", precision: 8, scale: 2
+    t.decimal "beach_night_value", precision: 8, scale: 2
+    t.decimal "tennis_day_value", precision: 8, scale: 2
+    t.decimal "tennis_night_value", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "schedulers", "clients"

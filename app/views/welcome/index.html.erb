@@ -14,7 +14,7 @@
                      
 <% @courts.each do |court|%>
 
-<div class="col-xl-3 col-md-6 mb-4">
+<div class="col-xl-6 col-md-6 mb-4">
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -63,8 +63,18 @@
                                 <% schedulers_in_court.each do |element|%>
                                 <td scope="row"><%= element.start_time.strftime("%H:%M") unless element.start_time.nil? %></td>
                                 <td scope="row"><%= element.end_time.strftime("%H:%M") unless element.end_time.nil? %></td>
-                                <td><%= element.client.name %><%#= schedulers_in_court.first.date %></td>
-                                <td><%= element.start_time.strftime("%H:%M")...element.end_time.strftime("%H:%M")%></td>
+                                <td scope="row"><%= element.client.name %>
+                                <%  start = element.start_time %>
+                                <%  finish = element.end_time %><%#= schedulers_in_court.first.date %>
+                                
+                                <% total_time = ((finish - start) / 1.hour)%>
+                                <% if element.start_time.hour > 6 && element.start_time.hour < 18    %>
+                                    <% value = @value.beach_day_value%>
+                                    <% else %>
+                                    <% value = @value.beach_night_value%>
+                                <% end %>
+                                <td scope="row">Valor: <%= (value * total_time).round(2) %></td>
+                                <%#= element.start_time.strftime("%H:%M")...element.end_time.strftime("%H:%M")%>
                                 </tr>
                                 <%end%>
                             <%else%>
