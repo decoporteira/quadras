@@ -1,11 +1,13 @@
 class WelcomeController < ApplicationController
   before_action :get_scheduler
   before_action :get_court
+  before_action :get_value
 
   def index
     date = params[:date]
     court_id = params[:court_id]
     @date = date ? date : Date.today
+    
   end
 
   private
@@ -16,5 +18,9 @@ class WelcomeController < ApplicationController
 
   def get_court
     @courts = Court.all
+  end
+
+  def get_value
+    @value = Value.first
   end
 end
