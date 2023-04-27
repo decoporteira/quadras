@@ -2,7 +2,7 @@ class Scheduler < ApplicationRecord
   include TranslateEnum
   belongs_to :client
   belongs_to :court
-
+ 
   enum status: { available: 0, unavailable: 1 }
   translate_enum :status
   validates_presence_of :start_time, :end_time
