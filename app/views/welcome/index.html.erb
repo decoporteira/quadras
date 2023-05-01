@@ -43,7 +43,7 @@
                             <th>Início</th>
                             <th>Final</th>
                             <th>Nome</th>
-
+                            <th>Valor</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -51,7 +51,7 @@
                             <th>Início</th>
                             <th>Final</th>
                             <th>Nome</th>
-
+                            <th>Valor</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -69,11 +69,13 @@
                                 
                                 <% total_time = ((finish - start) / 1.hour)%>
                                 <% if element.start_time.hour > 6 && element.start_time.hour < 18    %>
-                                    <% value = @value.beach_day_value%>
+                                   <%# value = @value.beach_day_value%>
+                                    <td scope="row">Dia<%#= (value * total_time).round(2) %></td>
                                     <% else %>
-                                    <% value = @value.beach_night_value%>
+                                   <%# value = @value.beach_night_value%>
+                                    <td scope="row">Noite<%#= (value * total_time).round(2) %></td>
                                 <% end %>
-                                <td scope="row">Valor: <%= (value * total_time).round(2) %></td>
+                                
                                 <%#= element.start_time.strftime("%H:%M")...element.end_time.strftime("%H:%M")%>
                                 </tr>
                                 <%end%>
