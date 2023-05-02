@@ -4,7 +4,7 @@ FactoryBot.define do
     date { "2021-09-09" }
     start_time { "14:00:00" }
     end_time { "14:00:00" }
-    court
+    court 
     client
   end
   factory :scheduler2, class: Scheduler do

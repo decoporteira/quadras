@@ -67,7 +67,7 @@ class CourtsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def court_params
-    params.require(:court).permit(:name, :status, :availability)
+    params.require(:court).permit(:name, :status, :availability, :court_type_id)
   end
 
   def get_court_type

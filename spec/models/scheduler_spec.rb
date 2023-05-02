@@ -1,11 +1,11 @@
 require "rails_helper"
 
 RSpec.describe Scheduler, type: :model do
-  it "1: Teste de datas que ainda não passaram" do
+  it "1: Testa criação de reserva de quadra com data passada" do
     expect { FactoryBot.create(:scheduler) }.to raise_error(ActiveRecord::RecordInvalid, 'A validação falhou: Data Não pode fazer reserva para datas passadas')
   end
 
-  it '2: Testa reserva de quadra com datas que já passaram' do
+  it '2: Testa criação reserva de quadra com data futura' do
     expect { FactoryBot.create(:scheduler2) }.to change { Scheduler.count }.by(1)
   end
 
