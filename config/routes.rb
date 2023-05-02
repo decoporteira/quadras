@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :court_types
   resources :values
   resources :schedulers
   resources :clients

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @court_type %>
+
+<div>
+  <%= link_to "Edit this court type", edit_court_type_path(@court_type) %> |
+  <%= link_to "Back to court types", court_types_path %>
+
+  <%= button_to "Destroy this court type", @court_type, method: :delete %>
+</div>

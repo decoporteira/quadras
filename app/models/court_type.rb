@@ -1,0 +1,2 @@
+class CourtType < ApplicationRecord
+end

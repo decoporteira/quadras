@@ -1,5 +1,6 @@
 class CourtsController < ApplicationController
   before_action :set_court, only: %i[ show edit update destroy ]
+  before_action :get_court_type, only: [:new, :edit]
 
   # GET /courts or /courts.json
   def index
@@ -67,5 +68,9 @@ class CourtsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def court_params
     params.require(:court).permit(:name, :status, :availability)
+  end
+
+  def get_court_type
+    @court_types = CourtType.all
   end
 end

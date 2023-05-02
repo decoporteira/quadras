@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Court types</h1>
+
+<div id="court_types">
+  <% @court_types.each do |court_type| %>
+    <%= render court_type %>
+    <p>
+      <%= link_to "Show this court type", court_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New court type", new_court_type_path %>

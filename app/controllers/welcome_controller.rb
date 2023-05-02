@@ -1,7 +1,6 @@
 class WelcomeController < ApplicationController
   before_action :get_scheduler
   before_action :get_court
-  before_action :get_value
 
   def index
     date = params[:date]
@@ -20,7 +19,4 @@ class WelcomeController < ApplicationController
     @courts = Court.all
   end
 
-  def get_value
-    @value = Value.first
-  end
 end
