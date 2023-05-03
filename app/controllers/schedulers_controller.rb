@@ -61,7 +61,6 @@ class SchedulersController < ApplicationController
   end
 
   private
-
   # Use callbacks to share common setup or constraints between actions.
   def set_scheduler
     @scheduler = Scheduler.find(params[:id])

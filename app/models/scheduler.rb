@@ -1,8 +1,9 @@
 class Scheduler < ApplicationRecord
+  #attr_accessor :start_time, :end_time
   include TranslateEnum
   belongs_to :client
   belongs_to :court
-
+  #before_save :calculate_price
  
   enum status: { available: 0, unavailable: 1 }
   translate_enum :status
@@ -20,4 +21,11 @@ class Scheduler < ApplicationRecord
       errors.add(:date, "Não pode fazer reserva para datas passadas")
     end
   end
+
+  def calculate_price 
+    sum_value = (end_time.to_i - start_time.to_i) * 10
+    self.total = sum_value
+
+  end 
+
 end

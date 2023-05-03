@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong><%= @court.class.human_attribute_name(:court_type) %>:</strong>
+  <%= @court.court_type_id %>
+</p>
+
+<p>
   <strong><%= @court.class.human_attribute_name(:status) %>:</strong>
   <%= @court.status %>
 </p>
