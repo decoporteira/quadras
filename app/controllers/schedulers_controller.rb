@@ -16,6 +16,7 @@ class SchedulersController < ApplicationController
     court_id = params[:court_id]
     @court_id = court_id ? court_id : 5
     @scheduler = Scheduler.new
+   
   end
 
   # GET /schedulers/1/edit
@@ -25,6 +26,7 @@ class SchedulersController < ApplicationController
   # POST /schedulers or /schedulers.json
   def create
     @scheduler = Scheduler.new(scheduler_params)
+    @scheduler.total = Scheduler.calculate_price(scheduler_params)
 
     respond_to do |format|
       if @scheduler.save
@@ -68,7 +70,7 @@ class SchedulersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def scheduler_params
-    params.require(:scheduler).permit(:status, :date, :start_time, :end_time, :client_id, :court_id)
+    params.require(:scheduler).permit(:status, :date, :start_time, :end_time, :client_id, :court_id, :total)
   end
 
   def get_clients

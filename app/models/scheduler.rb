@@ -1,5 +1,4 @@
 class Scheduler < ApplicationRecord
-  #attr_accessor :start_time, :end_time
   include TranslateEnum
   belongs_to :client
   belongs_to :court
@@ -22,10 +21,21 @@ class Scheduler < ApplicationRecord
     end
   end
 
-  def calculate_price 
-    sum_value = (end_time.to_i - start_time.to_i) * 10
-    self.total = sum_value
+  def self.calculate_price(scheduler_params)
+    if scheduler_params[:court_type_id] == 1
+      calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time])
+    else
+      calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time])
+    end
 
   end 
+
+  def self.calculate_per_hour(end_time, start_time)
+    print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    print end_time
+    print end_time.class
+    print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    end_time
+  end
 
 end

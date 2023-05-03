@@ -56,29 +56,26 @@
                     </tfoot>
                     <tbody>
 
-                        <tr>
-                            
+                        
                             <% schedulers_in_court = @schedulers.where(court_id: court.id, date: @date) %>
                             <% if schedulers_in_court.any? %>
                                 <% schedulers_in_court.each do |element|%>
+                                <tr>
                                     <td scope="row"><%= element.start_time.strftime("%H:%M") unless element.start_time.nil? %></td>
                                     <td scope="row"><%= element.end_time.strftime("%H:%M") unless element.end_time.nil? %></td>
                                     <td scope="row"><%= element.client.name %></td>
-                                   <td scope="row"><%= element.total %></td>
-                
+                                    <td scope="row"><%= element.total %></td>
+                                    </tr>
                                 <%end%>
                             <%else%>
                                 <td> - </td>
                                 <td> - </td>
                                 <td> - </td>
-                                
-                            
-                                 
-                                  
-                                  
+                                <td> - </td>                                
+                          
                             <% end %>
 
-                        </tr>
+                        
             </div>
             </tbody>
             </table>
