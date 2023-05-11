@@ -22,6 +22,7 @@ class Scheduler < ApplicationRecord
   end
 
   def self.calculate_price(scheduler_params)
+    court = CourtType.find_by id: scheduler_params[:court_type_id]
     if scheduler_params[:court_type_id] == 1
       calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time])
     else
@@ -31,11 +32,7 @@ class Scheduler < ApplicationRecord
   end 
 
   def self.calculate_per_hour(end_time, start_time)
-    print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    print end_time
-    print end_time.class
-    print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    end_time
+    total = end_time.to_i - start_time.to_i
   end
 
 end
