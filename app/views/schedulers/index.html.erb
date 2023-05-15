@@ -11,6 +11,7 @@
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Data</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Início</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Final</th>
+          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Valor</th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;">Cliente</th>
      
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.0057px;"><%= link_to new_scheduler_path, class:"btn btn-success btn-circle btn-sm" do %>
@@ -28,6 +29,7 @@
                 <td><%= scheduler.start_time.strftime("%H:%M") unless scheduler.start_time.nil? %></td>
                 
                 <td><%= scheduler.end_time.strftime("%H:%M") unless scheduler.end_time.nil? %></td>
+                <td>R$ <%= scheduler.total%></td>
                 <td><%= scheduler.client.name %></td>
                 
                 

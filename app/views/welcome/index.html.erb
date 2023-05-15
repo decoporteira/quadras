@@ -64,7 +64,7 @@
                                     <td scope="row"><%= element.start_time.strftime("%H:%M") unless element.start_time.nil? %></td>
                                     <td scope="row"><%= element.end_time.strftime("%H:%M") unless element.end_time.nil? %></td>
                                     <td scope="row"><%= element.client.name %></td>
-                                    <td scope="row"><%= element.total %></td>
+                                    <td scope="row">R$ <%= element.total %></td>
                                 </tr>
                                 <%end%>
                             <%else%>

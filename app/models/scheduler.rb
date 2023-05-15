@@ -22,17 +22,19 @@ class Scheduler < ApplicationRecord
   end
 
   def self.calculate_price(scheduler_params)
-    court = CourtType.find_by id: scheduler_params[:court_type_id]
-    if scheduler_params[:court_type_id] == 1
-      calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time])
+    # ERRO: estou procurando o Tipo_da_quadra pelo id do model Quadra, sempre virá errado
+    # Preciso procurar o o Tipo_da_quadra por Court.court_type
+    court_current = Court.find_by id: scheduler_params[:court_id]
+    court_type_current = CourtType.find_by id: court_current.court_type_id
+    if scheduler_params[:start_time].to_i < 18
+      calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time], court_type_current.day_price)
     else
-      calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time])
+      calculate_per_hour(scheduler_params[:end_time], scheduler_params[:start_time], court_type_current.night_price)
     end
-
   end 
-
-  def self.calculate_per_hour(end_time, start_time)
-    total = end_time.to_i - start_time.to_i
+  def self.calculate_per_hour(end_time, start_time, price)
+    total_hours = (end_time.to_time - start_time.to_time)
+    total = (total_hours / 3600) * price
   end
 
 end
